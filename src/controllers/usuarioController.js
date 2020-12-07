@@ -8,7 +8,11 @@ const create = (req, res) => {
      return res.status(500).send('Você não conseguiu se cadastrar')
     }
     const nome = req.body.nomeSocial
-    return res.status(200).send(`Bem vindx ${nome}`)
+    if(!nome){
+        const nomeComp = req.body.nomeCompleto
+       return res.status(200).send(`Bem vindx ${nomeComp}`)
+    }
+       return res.status(200).send(`Bem vindx ${nome}`)
    })
 }
 
