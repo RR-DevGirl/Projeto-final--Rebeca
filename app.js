@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 
 const app = express()
 
-mongoose.connect("mongodb://localhost:27017/DiáriodeSenhas", { 
+mongoose.connect(process.env.MONGODB_URL, { 
   useNewUrlParser: true, 
   useUnifiedTopology: true 
 })
@@ -16,7 +16,10 @@ db.once("open", function (){
   console.log("conexão okay")
 })
 
-const contas = require('./src/route/contasRoutes')
+const contas = require('./src/routes/contasRoute')
+const usuario = require('./src/routes/usuarioRoute')
+const index = require('./src/routes/index')
+
 
 app.use(bodyParser.json())
 
@@ -28,7 +31,10 @@ app.use(function (req, res, next) {
       )
       next()
     })
+ 
   
-  app.use("/contas", contas)
-
+    app.use("/", index)
+    app.use("/usuario", usuario)
+    app.use("/contas", contas)
+  
   module.exports = app
