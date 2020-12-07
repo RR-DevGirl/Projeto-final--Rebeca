@@ -11,6 +11,16 @@ const create = (req, res) => {
     })
 }
 
+const getAll = (req, res) => {
+  contas.find(function(err, conta){
+      if(err){
+          return res.status(500).send('Algo deu errado')
+      }
+      return res.status(200).send(conta)
+  })
+}
+
 module.exports = {
-    create
+    create,
+    getAll
 }
