@@ -7,6 +7,9 @@ const usuarioSchema = new mongoose.Schema ({
     senha: { type: String },
     numero: { type: Number },
     dataDeNascimento: { type: String }
+},
+{
+    versionKey: false
 })
 
 const usuario = new mongoose.model("usuarios",usuarioSchema)
