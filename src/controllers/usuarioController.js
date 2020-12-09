@@ -33,8 +33,21 @@ const create = (req, res) => {
    })
 }
 
-
+const login = (req, res) => {
+    usuarios.findOne({email: req.body.email}, function(err, usuario) {
+        if(!usuario){
+            return res.status(404).send('Email incorreto ou inexistente')
+        }
+        const senhaCorreta = bcrypt.compareSync(req.body.senha, usuario.senha)
+            if(!senhaCorreta) {
+                return res.status(403).send('Esqueceu a senha?')
+            }
+            const token = jwt.sign({email:req.body.email}, SECRET)
+            res.status(200).send(token)
+    })
+}
 
 module.exports = {
-    create
+    create,
+    login
 }
