@@ -9,6 +9,9 @@ const contasSchema = new mongoose.Schema({
 {versionKey: false}
 )
 
-const contas = new mongoose.model('contasCollection', contasSchema)
+const contasModel = new mongoose.model('contasCollection', contasSchema)
 
-module.exports = contas
+module.exports = {
+    contasModel,
+    contasSchema
+}

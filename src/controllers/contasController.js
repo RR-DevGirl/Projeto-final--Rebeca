@@ -1,4 +1,5 @@
-const contas = require('../model/contas')
+const importContas = require('../model/contas')
+const contas = importContas.contasModel
 
 const create = (req, res) => {
     let conta = new contas(req.body)

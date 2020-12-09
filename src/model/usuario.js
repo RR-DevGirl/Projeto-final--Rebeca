@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const contas = require('./contas')
 
 const usuarioSchema = new mongoose.Schema ({
     nomeCompleto: { type: String, required: true },
@@ -6,7 +7,8 @@ const usuarioSchema = new mongoose.Schema ({
     email: { type: String, required: true },
     senha: { type: String, required: true },
     numero: { type: Number },
-    dataDeNascimento: { type: String }
+    dataDeNascimento: { type: String },
+    contas: [contas.contasSchema]
 },
 {
     versionKey: false
