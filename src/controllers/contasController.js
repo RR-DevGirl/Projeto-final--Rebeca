@@ -1,6 +1,12 @@
 const importContas = require('../model/contas')
 const contas = importContas.contasModel
 
+//autenticar as rotas- pegar o token gerado e só liberar determinadas rotas assim
+//deletar contas
+//fazer atualizar dados da conta
+//tirar getAll quando terminar tudo 
+
+
 const create = (req, res) => {
     let conta = new contas(req.body)
 
