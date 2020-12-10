@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const contas = require('./contas')
 
 const usuarioSchema = new mongoose.Schema ({
-    id: { type: Number },
+    _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
     nomeCompleto: { type: String, required: true },
     nomeSocial: { type: String },
     email: { type: String, required: true },

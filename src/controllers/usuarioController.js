@@ -14,6 +14,8 @@ const jwt = require('jsonwebtoken')
 //fazer o getAll retornar sem as contas
 //fazer um getAll que retorne apenas as suas contas
 //excluir cadastro
+//atualizar cadastro
+
 
 const create = (req, res) => {
     const senhaComHash = bcrypt.hashSync(req.body.senha, 10)
@@ -50,7 +52,7 @@ const login = (req, res) => {
 
 const addConta = async (req, res) => {
     
-   const usuarioAchado = await usuarios.findOne({ id: req.params.id })
+   const usuarioAchado = await usuarios.findOne({ _id: req.params._id })
   
     if(usuarioAchado){
         const conta = new importContas.contasModel(req.body)
@@ -81,10 +83,23 @@ else{
 })
 }
 
+const getById = (req, res) => {
+   
+  usuarios.find({ _id: req.params._id }, function(err, usuario){
+        if(err){
+            res.status(500).send('algo de errado não esta certo')
+        }
+       else { return res.status(200).send(usuario)
+    }
+        
+    })
+    
+}
 
 module.exports = {
     create,
     login,
     addConta,
-    getAll
+    getAll,
+    getById
 }
