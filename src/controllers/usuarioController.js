@@ -10,8 +10,8 @@ const jwt = require('jsonwebtoken')
 //fazer um login-ok
 //fazer o login gerar um token-ok
 //fazer rota que adiciona contas dentro do usuário- ok
-//gerar um id automático
-//fazer o getAll retornar sem as contas
+//gerar um id automático -ok
+//fazer o getAll retornar sem as contas - depois
 //fazer um getAll que retorne apenas as suas contas
 //excluir cadastro
 //atualizar cadastro
@@ -76,11 +76,11 @@ const getAll = (req, res) => {
 usuarios.find(function(err, usuarioAll){
 if(err){
     res.status(500).send('Cadê os usuários?')
-}
+    }
 else{
     res.status(200).send(usuarioAll)
-}
-})
+  }
+ })
 }
 
 const getById = (req, res) => {
@@ -96,10 +96,15 @@ const getById = (req, res) => {
     
 }
 
+
+
+
+
 module.exports = {
     create,
     login,
     addConta,
     getAll,
-    getById
+    getById,
+   
 }

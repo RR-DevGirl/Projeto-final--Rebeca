@@ -1,27 +1,28 @@
 const importcontas = require('../model/contas')
-const contas = importcontas.contasModel
+const usuarios = require('../model/usuario')
 
 //autenticar as rotas- pegar o token gerado e só liberar determinadas rotas assim
 //deletar contas
 //fazer atualizar dados da conta
-//tirar getAll quando terminar tudo 
+//tirar getAll quando terminar tudo -ok
 
 
 
 
 
-/*const create = (req, res) => {
-    let conta = new contas(req.body)
-
-    conta.save(function(err){ 
+const getAllContas = (req, res) => {
+    usuarios.find({ _id: req.params._id },'contas', function(err, conta){
         if(err){
-            return res.status(500).send('Erro ao incluir nova conta')
+            res.status(500).send('algo de errado não esta certo')
         }
-        return res.status(200).send('Nova conta inclusa com sucesso')
+       else { return res.status(200).send(conta)
+    }
+        
     })
+
 }
-*/
-const getAll = (req, res) => {
+
+const getAllDev = (req, res) => {
   contas.find(function(err, conta){
       if(err){
           return res.status(500).send('Algo deu errado, ein')
@@ -31,5 +32,6 @@ const getAll = (req, res) => {
 }
 
 module.exports = {
-    getAll
+    getAllContas,
+    getAllDev
 }
