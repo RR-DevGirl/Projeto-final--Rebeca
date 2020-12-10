@@ -1,6 +1,5 @@
-const importContas = require('../model/contas')
-const contas = importContas.contasModel
-const usuarios = require('../model/usuario')
+const importcontas = require('../model/contas')
+const contas = importcontas.contasModel
 
 //autenticar as rotas- pegar o token gerado e só liberar determinadas rotas assim
 //deletar contas
