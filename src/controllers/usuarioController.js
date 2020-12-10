@@ -1,4 +1,5 @@
 const usuarios = require('../model/usuario')
+const importContas = require('../model/contas')
 const SECRET = process.env.SECRET
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
@@ -6,8 +7,8 @@ const jwt = require('jsonwebtoken')
 
 //adicionar uma chave para proteger a conta- ok
 //fazer gerar um hash com o cadastro de uma nova conta- ok
-//fazer um login
-//fazer o login gerar um token
+//fazer um login-ok
+//fazer o login gerar um token-ok
 //fazer rota que adiciona contas dentro do usuário
 //gerar um id automático
 //fazer o getAll retornar sem as contas
@@ -47,7 +48,31 @@ const login = (req, res) => {
     })
 }
 
+const addConta = async (req, res) => {
+    
+   const usuarioAchado = await usuarios.findOne({ id: req.params.id })
+   const conta = new importContas.contasModel(req.body)
+    if(usuarioAchado){
+        usuarioAchado.contas.push(conta)
+        usuarioAchado.save(function(err){
+            if(err){
+             res.status(500).send('WHAT WAS THE REASON?')
+            }
+        })
+     /*  conta.save(function(err){
+        if(err){
+            return res.status(500).send('WHAT WAS THE REASON?')
+        }
+        else{ return res.status(200).send('keep a calm e deu certo') }
+       })*/
+       res.status(200).send('keep a calm e deu certo')
+    }
+
+}
+
+
 module.exports = {
     create,
-    login
+    login,
+    addConta
 }
