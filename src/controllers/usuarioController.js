@@ -51,21 +51,20 @@ const login = (req, res) => {
 const addConta = async (req, res) => {
     
    const usuarioAchado = await usuarios.findOne({ id: req.params.id })
-   const conta = new importContas.contasModel(req.body)
+  
     if(usuarioAchado){
+        const conta = new importContas.contasModel(req.body)
         usuarioAchado.contas.push(conta)
         usuarioAchado.save(function(err){
             if(err){
              res.status(500).send('WHAT WAS THE REASON?')
             }
+            res.status(200).send('keep a calm e deu certo')
         })
-     /*  conta.save(function(err){
-        if(err){
-            return res.status(500).send('WHAT WAS THE REASON?')
-        }
-        else{ return res.status(200).send('keep a calm e deu certo') }
-       })*/
-       res.status(200).send('keep a calm e deu certo')
+    
+    }
+    else{
+        res.status(404).send('Usuário não encontrado')
     }
 
 }
