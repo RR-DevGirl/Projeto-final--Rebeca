@@ -14,7 +14,7 @@ const jwt = require('jsonwebtoken')
 //fazer o getAll retornar sem as contas - depois
 //fazer um getAll que retorne apenas as suas contas-ok
 //excluir cadastro- ok
-//atualizar cadastro
+//atualizar cadastro - ok
 //autenticar tudo
 // deletar o usuario e suas contas ao mesmo tempo
 

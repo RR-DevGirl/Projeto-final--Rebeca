@@ -1,9 +1,9 @@
 const importcontas = require('../model/contas')
-const contas = importcontas.contasModel
+const contaModel = importcontas.contasModel
 const usuarios = require('../model/usuario')
 
 //autenticar as rotas- pegar o token gerado e só liberar determinadas rotas assim
-//deletar contas
+//deletar contas- ok
 //fazer atualizar dados da conta
 //tirar getAll quando terminar tudo -ok
 
@@ -24,7 +24,7 @@ const getAllContas = (req, res) => {
 }
 
 const getAllDev = (req, res) => {
-  contas.find(function(err, conta){
+  contaModel.find(function(err, conta){
       if(err){
          res.status(500).send('Algo deu errado, ein')
       }
@@ -33,7 +33,25 @@ const getAllDev = (req, res) => {
   })
 }
 
+const remove = (req, res) => {
+    
+    contaModel.deleteMany({ _id: req.params._id },function (err) {
+          if (err) {
+            return res.status(500).send('Conta não removida')
+          }
+        
+         usuarios.updateMany({}, { $pull: {'contas': {_id: req.params._id} } }, function(error){
+             if(error){
+                 res.status(500).send('Deu errado mas calma')
+             }
+             res.status(200).send('Pode respirar agora que deu certo')
+         })
+         
+        })
+    }
+
 module.exports = {
     getAllContas,
-    getAllDev
+    getAllDev,
+    remove
 }
