@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const contasSchema = new mongoose.Schema({
+    _id: { type: mongoose.Schema.Types.ObjectId, auto: true, required: true },
     donxDaConta: { type: String, required: true },
     conta: { type: String, required: true },
     tipoDeConta: { type: String, required: true },

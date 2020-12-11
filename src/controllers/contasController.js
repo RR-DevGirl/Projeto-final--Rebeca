@@ -1,6 +1,7 @@
 const importcontas = require('../model/contas')
 const contaModel = importcontas.contasModel
 const usuarios = require('../model/usuario')
+//const usuarioController = require('./usuarioController')
 
 //autenticar as rotas- pegar o token gerado e só liberar determinadas rotas assim
 //deletar contas- ok
@@ -53,21 +54,28 @@ const remove = (req, res) => {
 
 
 
-const updateContas = (req, res) => {
-    contaModel.updateMany({ _id: req.params._id },{ $set: req.body },function (err) {
+const updateContas =  (req, res) => {
+  
+    contaModel.updateMany({ _id: req.params._id },{ $set: req.body }, function (err, eita) {
         if (err) {
-          return res.status(500).send('não desista')
+          return res.status(500).send('masoq?')
         }
-     
-
-      usuarios.updateMany({'contas':{_id: req.params._id}}, {$set: req.body}, function(error){
-        if(error){
-            res.status(500).send('tente novamente')
-        }
-        res.status(200).send('meu Deus será que deu certo mesmo?')
-       })
-    })
+        //console.log(eita)
+       usuarios.updateMany( { 'contas':{_id: req.params._id}}, {$push: req.body}, function(error){
+            if(error){
+                res.status(500).send('pedir a papai noel de presente um código que rode')
+            }
+            
+            res.status(200).send('ve se foi')
+        })
+       
+      })
+    
 }
+  
+
+
+
 
 module.exports = {
     getAllContas,
