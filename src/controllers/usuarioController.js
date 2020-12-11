@@ -12,9 +12,10 @@ const jwt = require('jsonwebtoken')
 //fazer rota que adiciona contas dentro do usuário- ok
 //gerar um id automático -ok
 //fazer o getAll retornar sem as contas - depois
-//fazer um getAll que retorne apenas as suas contas
-//excluir cadastro
+//fazer um getAll que retorne apenas as suas contas-ok
+//excluir cadastro- ok
 //atualizar cadastro
+//autenticar tudo
 
 
 const create = (req, res) => {
@@ -96,8 +97,16 @@ const getById = (req, res) => {
     
 }
 
-
-
+const remove = (req, res) => {
+    
+usuarios.deleteMany({ _id: req.params._id },function (err) {
+      if (err) {
+        return res.status(500).send('Deu errado')
+      }
+      res.status(200).send('Deu certo')
+     
+    })
+}
 
 
 module.exports = {
@@ -106,5 +115,6 @@ module.exports = {
     addConta,
     getAll,
     getById,
+    remove
    
 }
