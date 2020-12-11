@@ -54,26 +54,18 @@ const remove = (req, res) => {
 
 
 
-const updateContas =  (req, res) => {
-  
-    contaModel.updateMany({ _id: req.params._id },{ $set: req.body }, function (err, eita) {
-        if (err) {
-          return res.status(500).send('masoq?')
-        }
-        //console.log(eita)
-       usuarios.updateMany( { 'contas':{_id: req.params._id}}, {$push: req.body}, function(error){
-            if(error){
-                res.status(500).send('pedir a papai noel de presente um código que rode')
-            }
-            
-            res.status(200).send('ve se foi')
-        })
-       
-      })
-    
-}
-  
 
+  
+const tipoDeContas = (req, res) => {
+    contaModel.find({ tipoDeConta: req.params.tipoDeConta }, function(err, conta){
+        if(err){
+            res.status(500).send('deu ruinzao')
+        }
+       else { return res.status(200).send(conta)
+    }
+        
+    })
+}
 
 
 
@@ -81,5 +73,6 @@ module.exports = {
     getAllContas,
     getAllDev,
     remove,
-    updateContas
+    tipoDeContas
+  
 }
