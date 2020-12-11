@@ -7,10 +7,31 @@ const usuarios = require('../model/usuario')
 //deletar contas- ok
 //fazer atualizar dados da conta
 //tirar getAll quando terminar tudo -ok
-//adicionar busca por tipo de conta
+//adicionar busca por tipo de conta- ok
 
 
-
+const addConta = async (req, res) => {
+    
+    const usuarioAchado = await usuarios.findOne({ _id: req.params._id })
+   
+     if(usuarioAchado){
+         const conta = new contaModel(req.body)
+         await conta.save()
+         usuarioAchado.contas.push(conta)
+         usuarioAchado.save(function(err){
+             if(err){
+              res.status(500).send('WHAT WAS THE REASON?')
+             }
+             res.status(200).send('keep a calm e deu certo')
+         })
+     
+     }
+     else{
+         res.status(404).send('Usuário não encontrado')
+     }
+ 
+ }
+ 
 
 
 const getAllContas = (req, res) => {
@@ -73,6 +94,7 @@ module.exports = {
     getAllContas,
     getAllDev,
     remove,
+    addConta,
     tipoDeContas
   
 }
