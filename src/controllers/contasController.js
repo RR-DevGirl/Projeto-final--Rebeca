@@ -6,6 +6,7 @@ const usuarios = require('../model/usuario')
 //deletar contas- ok
 //fazer atualizar dados da conta
 //tirar getAll quando terminar tudo -ok
+//adicionar busca por tipo de conta
 
 
 
@@ -50,8 +51,27 @@ const remove = (req, res) => {
         })
     }
 
+
+
+const updateContas = (req, res) => {
+    contaModel.updateMany({ _id: req.params._id },{ $set: req.body },function (err) {
+        if (err) {
+          return res.status(500).send('não desista')
+        }
+     
+
+      usuarios.updateMany({'contas':{_id: req.params._id}}, {$set: req.body}, function(error){
+        if(error){
+            res.status(500).send('tente novamente')
+        }
+        res.status(200).send('meu Deus será que deu certo mesmo?')
+       })
+    })
+}
+
 module.exports = {
     getAllContas,
     getAllDev,
-    remove
+    remove,
+    updateContas
 }
