@@ -16,7 +16,7 @@ const jwt = require('jsonwebtoken')
 //excluir cadastro- ok
 //atualizar cadastro
 //autenticar tudo
-
+// deletar o usuario e suas contas ao mesmo tempo
 
 const create = (req, res) => {
     const senhaComHash = bcrypt.hashSync(req.body.senha, 10)
@@ -108,6 +108,18 @@ usuarios.deleteMany({ _id: req.params._id },function (err) {
     })
 }
 
+const updateUsuario = (req, res) => {
+    
+    usuarios.updateMany({ _id: req.params._id },{ $set: req.body },function (err) {
+        if (err) {
+          return res.status(500).send('vixi kk')
+        }
+        res.status(200).send('Atualizado com sucesso')
+       
+      })
+
+}
+
 
 module.exports = {
     create,
@@ -115,6 +127,7 @@ module.exports = {
     addConta,
     getAll,
     getById,
-    remove
+    remove,
+    updateUsuario
    
 }

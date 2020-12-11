@@ -1,4 +1,5 @@
 const importcontas = require('../model/contas')
+const contas = importcontas.contasModel
 const usuarios = require('../model/usuario')
 
 //autenticar as rotas- pegar o token gerado e só liberar determinadas rotas assim
@@ -25,9 +26,10 @@ const getAllContas = (req, res) => {
 const getAllDev = (req, res) => {
   contas.find(function(err, conta){
       if(err){
-          return res.status(500).send('Algo deu errado, ein')
+         res.status(500).send('Algo deu errado, ein')
       }
-      return res.status(200).send(conta)
+      res.status(200).send(conta)
+     
   })
 }
 

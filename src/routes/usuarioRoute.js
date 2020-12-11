@@ -8,6 +8,7 @@ router.post('/:_id', controller.addConta)
 router.get('/', controller.getAll)
 router.get('tudo/:_id', controller.getById)
 router.delete('/:_id', controller.remove)
+router.patch('/:_id', controller.updateUsuario)
 
 
 module.exports = router
