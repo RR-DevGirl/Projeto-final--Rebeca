@@ -22,6 +22,16 @@ Tanto eu como muitas pessoas ao meu redor já tiveram inúmeros problemas por n�
 
 :heavy_check_mark: [Heroku](dashboard.heroku.com/)
 
+## Instalação
+- Faça um _fork_ no repositório
+- Depois execute no terminal:
 
+```
+git clone https://github.com/Rebeca-desen/Projeto-final--Rebeca.git
+cd Projeto-final--Rebeca
+npm install
+npm start
+
+```
 
 
