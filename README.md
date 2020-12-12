@@ -1,5 +1,7 @@
 # Projeto-final--Rebeca
 
+API usada como Projeto Final para concluir o bootcamp de Back-end na [Reprograma](https://reprograma.com.br/index.html)
+
 ## Diário de senhas
 
 #### Uma API que vai te ajudar a armazenar e organizar suas senhas para você nunca mais se preocupar em esquecer. A única senha que você vai precisar lembrar é a do seu diário de senhas.
@@ -120,3 +122,11 @@ npm start
 | `/contas/:_id(usuario)` | Get | Acessa apenas as contas do usuário
 |`/contas/_id(da conta)`  | Delete | Apaga a conta determinada pelo _id
 |`/contas/:_id(usuario)/:Id(da conta)`  | Patch| Atualiza os dados da conta determinada pelos _id's
+
+
+## Futuras melhorias
+Como essa é a primeira versão dessa API é bem provável que ainda sofra algumas melhorias como
+- Criptografar os dados das contas armazenadas pelos usuários no banco de dados e descriptografar para o cliente
+- Atualizar e melhorar algumas rotas como a de deletar o cadastro do cliente que não está apagando as contas deles do banco de dados
+-  Fazer um Front-end
+- Sofisticar algumas rotas (como a de buscas também)
