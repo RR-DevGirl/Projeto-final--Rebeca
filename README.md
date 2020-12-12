@@ -16,9 +16,12 @@ Tanto eu como muitas pessoas ao meu redor já tiveram inúmeros problemas por n�
 ## Tecnologias usadas
 :heavy_check_mark: [NodeJS](https://nodejs.org/pt-br/)
 
-:heavy_check_mark: [MongoDB](https://www.mongodb.com/)
+:heavy_check_mark: [MongoDB](https://account.mongodb.com/account/login?n=%2Fv2%2F5fce5088817dde0f054de1f4&nextHash=%23metrics%2FreplicaSet%2F5fce512aace4e83e93eba4e3%2Fexplorer%2FDi%25C3%25A1riodeSenhas%2Fusuarios%2Ffind)
 
-:heavy_check_mark: JavaScript
+:heavy_check_mark: [JavaScript]()
+
+:heavy_check_mark: [Heroku](dashboard.heroku.com/)
+
 
 
 
