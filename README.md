@@ -22,6 +22,8 @@ Tanto eu como muitas pessoas ao meu redor já tiveram inúmeros problemas por n�
 
 :heavy_check_mark: [Heroku](dashboard.heroku.com/)
 
+:heavy_check_mark: [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=pt-BR)
+
 ## Instalação
 - Faça um _fork_ no repositório
 - Depois execute no terminal:
@@ -30,8 +32,15 @@ Tanto eu como muitas pessoas ao meu redor já tiveram inúmeros problemas por n�
 git clone https://github.com/Rebeca-desen/Projeto-final--Rebeca.git
 cd Projeto-final--Rebeca
 npm install
+
+```
+## Rodando o código
+- Para rodar o código basta executar no terminal:
+```
 npm start
 
 ```
 
+## Acessando as rotas
+- Se você está rodando localmente você precisa digitar:
 
