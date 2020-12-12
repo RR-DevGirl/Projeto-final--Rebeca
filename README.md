@@ -84,6 +84,7 @@ npm start
 | Rota | Método | Ação 
 |---------|--------|------|
 | `/usuario/cadastro` |  Post| Adiciona um novo usuário, cadastra o cliente
+| `/usuario` | Get | Visualiza todos os usuários cadastrados
 |`/usuario/login`|Post| Colocando o login e senha no body e ele vai gerar um _token_ que vai servir para poder acessar as outras rotas a configuração vai ficar mais ou menos assim:
 
 
