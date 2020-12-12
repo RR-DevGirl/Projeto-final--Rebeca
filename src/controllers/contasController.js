@@ -7,7 +7,7 @@ const usuarios = importUsuario.usuario
 
 //adicionar busca por tipo de conta- melhorar
 //busca por nome da conta
-//atualizar
+//atualizar -ok
 
 const addConta = async (req, res) => {
     
@@ -118,12 +118,25 @@ const updateContas = (req, res) => {
     )
 }
 
+const nomeConta = (req, res) => {
+    contaModel.find({ conta: req.params.conta }, function(err, nameContas){
+        if(err){
+            res.status(500).send('chora não bb')
+        }
+       else { return res.status(200).send(nameContas)
+    }
+        
+    })
+}
+
+
 module.exports = {
     getAllContas,
     getAllDev,
     remove,
     addConta,
     tipoDeContas,
-    updateContas
+    updateContas,
+    nomeConta
   
 }
