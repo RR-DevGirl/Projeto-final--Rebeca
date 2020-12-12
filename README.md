@@ -2,6 +2,8 @@
 ## Diário de senhas
 #### Uma API que vai te ajudar a armazenar e organizar suas senhas para você nunca mais se preocupar em esquecer. A única senha que você vai precisar lembrar é a do seu diário de senhas.
 
+![Logo Rebeca](https://github.com/Rebeca-desen/Projeto-final--Rebeca/blob/main/Logo%20Rebeca.png)
+
 ## Funcionalidades
 #### Você vai poder se cadastrar
 #### A pessoa vai poder pesquisar pelo nome do site ou app, fazendo ele retornar as informações daquela conta
