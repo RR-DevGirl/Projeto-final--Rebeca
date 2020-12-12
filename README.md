@@ -14,13 +14,11 @@
 Tanto eu como muitas pessoas ao meu redor já tiveram inúmeros problemas por não se lembrar dos dados que colocou em alguma conta, isso pode ser porque deixou para anotar depois, ou anotou em qualquer papel e perdeu, ou anota num grupo que só tem você no celular e acontece algo e você perde aquela conversa. E sabemos o quão é importante algumas senhas e contas serem bem armazenadas principalmente na comunidade DEV
 
 ## Tecnologias usadas
-:heavy_check_mark: JavaScript
+:heavy_check_mark: [NodeJS](https://nodejs.org/pt-br/)
 
-:heavy_check_mark: NodeJS
+:heavy_check_mark: [MongoDB](https://www.mongodb.com/)
 
-:heavy_check_mark: MongoDB
-
-:heavy_check_mark: Mongoose
+:heavy_check_mark: [JavaScript]
 
 
 
