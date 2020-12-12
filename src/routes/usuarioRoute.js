@@ -27,7 +27,7 @@ const autenticar = (req, res, next) => {
 router.post('/cadastro', controller.create)
 router.post('/login', controller.login)
 router.get('/', controller.getAll)
-router.get('tudo/:_id', autenticar, controller.getById)
+router.get('/tudo/:_id', autenticar, controller.getById)
 router.delete('/:_id', autenticar, controller.remove)
 router.patch('/:_id', autenticar, controller.updateUsuario)
 
