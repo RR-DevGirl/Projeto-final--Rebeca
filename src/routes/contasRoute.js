@@ -23,10 +23,10 @@ const autenticar = (req, res, next) => {
   next()
 })
 }
-
+ 
 
 router.get('/dev', controller.getAllDev)
-router.get('/:conta', controller.nomeConta)
+router.get('/:conta', autenticar, controller.nomeConta)
 router.get('/:tipoDeConta', autenticar, controller.tipoDeContas)
 router.post('/:_id', autenticar, controller.addConta)
 router.get('/:_id', autenticar, controller.getAllContas)

@@ -6,7 +6,7 @@ const usuarios = importUsuario.usuario
 
 
 //adicionar busca por tipo de conta- melhorar
-//busca por nome da conta
+//busca por nome da conta- ok
 //atualizar -ok
 
 const addConta = async (req, res) => {
