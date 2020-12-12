@@ -83,12 +83,25 @@ npm start
 |---------|--------|------|
 | `/usuario/cadastro` |  Post| Adiciona um novo usuário, cadastra o cliente
 |`/usuario/login`|Post| Colocando o login e senha no body e ele vai gerar um _token_ que vai servir para poder acessar as outras rotas a configuração vai ficar mais ou menos assim:
+
+
+
+
 ![enter image description here](https://github.com/Rebeca-desen/Projeto-final--Rebeca/blob/main/public/imagens/Postlogin.PNG)
+
+
+
+
 
 | Rota | Método | Ação
 |---------|-----------|-------
 | `/usuario/tudo/_id` | Get | Essa rota vai acessar todas as contas armazenadas e dados do usuário cadastrado. Essa rota e as próximas vão precisar do _token_. Para liberar o acesso faça como o ilustrado a seguir:
+
+
+
 ![enter image description here](https://github.com/Rebeca-desen/Projeto-final--Rebeca/blob/main/public/imagens/getIdAutentica%C3%A7%C3%A3o.PNG)
+
+
 
 | Rota | Método | Ação
 |---------|-----------|-------
