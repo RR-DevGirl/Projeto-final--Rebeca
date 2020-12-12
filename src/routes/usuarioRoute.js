@@ -8,7 +8,7 @@ const SECRET = process.env.SECRET
 const autenticar = (req, res, next) => {
     const authHeader = req.get('authorization')
 
-    if(!authHeader){ return res.status(401).send('cadê os heards anjo')}
+    if(!authHeader){ return res.status(401).send('Header não definido')}
   
     const token = authHeader.split(' ')[1]
   
@@ -17,7 +17,7 @@ const autenticar = (req, res, next) => {
        
       if(erro){
         
-       return res.status(403).send('foi não visse? tem algo errado')
+       return res.status(403).send('Acesso negado')
       }
 
   next()
@@ -27,7 +27,7 @@ const autenticar = (req, res, next) => {
 router.post('/cadastro', controller.create)
 router.post('/login', controller.login)
 router.get('/all', controller.getAll)
-router.get('/', controller.usuariosOnly)
+router.get('/', autenticar, controller.usuariosOnly)
 router.get('/contas/:_id', autenticar, controller.getById)
 router.delete('/:_id', autenticar, controller.remove)
 router.patch('/:_id', autenticar, controller.updateUsuario)
