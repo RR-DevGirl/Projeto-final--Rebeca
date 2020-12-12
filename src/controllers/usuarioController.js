@@ -1,21 +1,13 @@
-const usuarios = require('../model/usuario')
+const importUsuario = require('../model/usuario')
+const usuarios = importUsuario.usuario
 const importContas = require('../model/contas')
 const SECRET = process.env.SECRET
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 
-//adicionar uma chave para proteger a conta- ok
-//fazer gerar um hash com o cadastro de uma nova conta- ok
-//fazer um login-ok
-//fazer o login gerar um token-ok
-//fazer rota que adiciona contas dentro do usuário- ok
-//gerar um id automático -ok
+
 //fazer o getAll retornar sem as contas - depois
-//fazer um getAll que retorne apenas as suas contas-ok
-//excluir cadastro- ok
-//atualizar cadastro - ok
-//autenticar tudo
 // deletar o usuario e suas contas ao mesmo tempo
 
 const create = (req, res) => {

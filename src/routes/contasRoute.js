@@ -24,11 +24,14 @@ const autenticar = (req, res, next) => {
 })
 }
 
+
 router.get('/dev', controller.getAllDev)
 router.get('/:tipoDeConta', autenticar, controller.tipoDeContas)
 router.post('/:_id', autenticar, controller.addConta)
 router.get('/:_id', autenticar, controller.getAllContas)
 router.delete('/:_id', autenticar, controller.remove)
+router.patch('/:usuarioId/:contaId', controller.updateContas)
+
 
 
 

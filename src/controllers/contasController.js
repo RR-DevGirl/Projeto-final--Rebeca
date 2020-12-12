@@ -1,14 +1,13 @@
 const importcontas = require('../model/contas')
 const contaModel = importcontas.contasModel
-const usuarios = require('../model/usuario')
-//const usuarioController = require('./usuarioController')
+const importUsuario = require('../model/usuario')
+const usuarios = importUsuario.usuario
 
-//autenticar as rotas- pegar o token gerado e só liberar determinadas rotas assim
-//deletar contas- ok
-//fazer atualizar dados da conta
-//tirar getAll quando terminar tudo -ok
-//adicionar busca por tipo de conta- ok
 
+
+//adicionar busca por tipo de conta- melhorar
+//busca por nome da conta
+//atualizar
 
 const addConta = async (req, res) => {
     
@@ -88,13 +87,43 @@ const tipoDeContas = (req, res) => {
     })
 }
 
-
+const updateContas = (req, res) => {
+    const usuarioId = req.params.usuarioId
+    const contaId = req.params.contaId
+    const options = { new: true}
+    
+    usuarios.findOneAndUpdate({_id: usuarioId, 'contas._id': contaId},{
+        $set:{
+            'contas.$.donxDaConta': req.body.donxDaConta,
+            'contas.$.conta': req.body.conta,
+            'contas.$.tipoDeConta': req.body.tipoDeConta,
+            'contas.$.dadosDaConta': req.body.dadosDaConta
+        }
+     },
+     options,
+     (erro, conta) => {
+         if(erro){
+            res.status(500).send('choremos')
+         }
+         if(conta){
+            contaModel.updateMany({_id: contaId},{$set: req.body}, function(erradin){
+                if(erradin){
+                    res.status(500).send('erradin')
+                }
+                res.status(200).send('bababab')
+            } )
+         }
+         
+     }
+    )
+}
 
 module.exports = {
     getAllContas,
     getAllDev,
     remove,
     addConta,
-    tipoDeContas
+    tipoDeContas,
+    updateContas
   
 }
