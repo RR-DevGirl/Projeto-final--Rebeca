@@ -1,14 +1,10 @@
 const importUsuario = require('../model/usuario')
 const usuarios = importUsuario.usuario
-const importContas = require('../model/contas')
 const SECRET = process.env.SECRET
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 
 
-
-//fazer o getAll retornar sem as contas - depois
-// deletar o usuario e suas contas ao mesmo tempo
 
 const create = (req, res) => {
     const senhaComHash = bcrypt.hashSync(req.body.senha, 10)
@@ -91,6 +87,16 @@ const updateUsuario = (req, res) => {
 
 }
 
+const usuariosOnly = (req, res) => {
+    usuarios.find({}, {contas: 0}, function(err, allUsuarios){
+        if(err){
+            res.status(500).send('Error 500')
+        }
+        else{
+            res.status(200).send(allUsuarios)
+        }
+    })
+} 
 
 module.exports = {
     create,
@@ -98,6 +104,7 @@ module.exports = {
     getAll,
     getById,
     remove,
-    updateUsuario
+    updateUsuario,
+    usuariosOnly
    
 }

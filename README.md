@@ -95,7 +95,7 @@ npm start
 
 | Rota | Método | Ação
 |---------|-----------|-------
-| `/usuario/tudo/:_id` | Get | Essa rota vai acessar o perfil do usuário, com todas as contas armazenadas e dados do usuário cadastrado. Essa rota e as próximas vão precisar do _token_. Para liberar o acesso faça como o ilustrado a seguir:
+| `/usuario/contas/:_id` | Get | Essa rota vai acessar o perfil do usuário, com todas as contas armazenadas e dados do usuário cadastrado. Essa rota e as próximas vão precisar do _token_. Para liberar o acesso faça como o ilustrado a seguir:
 
 
 
@@ -123,6 +123,12 @@ npm start
 |`/contas/_id(da conta)`  | Delete | Apaga a conta determinada pelo _id
 |`/contas/:_id(usuario)/:Id(da conta)`  | Patch| Atualiza os dados da conta determinada pelos _id's
 
+### Rotas teste
+Rotas para ver o funcionamento das aplicações no banco de dados
+| Rota |  Método| Ação
+|--|--|
+|`/contas/dev`  | Get | Retorna todas as contas do banco de dados
+|`/usuario/all`  | Get | Retorna todos os usuários e suas contas armazenadas
 
 ## Futuras melhorias
 Como essa é a primeira versão dessa API é bem provável que ainda sofra algumas melhorias como

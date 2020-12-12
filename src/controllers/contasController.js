@@ -5,10 +5,6 @@ const usuarios = importUsuario.usuario
 
 
 
-//adicionar busca por tipo de conta- melhorar
-//busca por nome da conta- ok
-//atualizar -ok
-
 const addConta = async (req, res) => {
     
     const usuarioAchado = await usuarios.findOne({ _id: req.params._id })
