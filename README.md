@@ -18,7 +18,7 @@ Tanto eu como muitas pessoas ao meu redor já tiveram inúmeros problemas por n�
 
 :heavy_check_mark: [MongoDB](https://www.mongodb.com/)
 
-:heavy_check_mark: [JavaScript]
+:heavy_check_mark: JavaScript
 
 
 
