@@ -85,7 +85,7 @@ npm start
 |---------|--------|------|
 | `/usuario/cadastro` |  Post| Adiciona um novo usuário, cadastra o cliente
 | `/usuario` | Get | Visualiza todos os usuários cadastrados
-|`/usuario/login`|Post| Colocando o login e senha no body e ele vai gerar um _token_ que vai servir para poder acessar as outras rotas a configuração vai ficar mais ou menos assim:
+|`/usuario/login`|Post| Colocando o email e senha no body e ele vai gerar um _token_ que vai servir para poder acessar as outras rotas. A configuração vai ficar mais ou menos assim:
 
 
 
@@ -96,7 +96,7 @@ npm start
 
 | Rota | Método | Ação
 |---------|-----------|-------
-| `/usuario/contas/:_id` | Get | Essa rota vai acessar o perfil do usuário, com todas as contas armazenadas e dados do usuário cadastrado. Essa rota e as próximas vão precisar do _token_. Para liberar o acesso faça como o ilustrado a seguir:
+| `/usuario/contas/:_id` | Get | Acessa o perfil do usuário, com todas as contas armazenadas e dados do usuário cadastrado. Essa rota e as próximas vão precisar do _token_. Para liberar o acesso faça como o ilustrado a seguir:
 
 
 
@@ -127,7 +127,7 @@ npm start
 ### Rotas teste
 Rotas para ver o funcionamento das aplicações no banco de dados
 | Rota |  Método| Ação
-|--|--|
+|-----|----|---
 |`/contas/dev`  | Get | Retorna todas as contas do banco de dados
 |`/usuario/all`  | Get | Retorna todos os usuários e suas contas armazenadas
 
