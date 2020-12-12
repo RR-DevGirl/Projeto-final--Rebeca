@@ -15,9 +15,9 @@ const addConta = async (req, res) => {
          usuarioAchado.contas.push(conta)
          usuarioAchado.save(function(err){
              if(err){
-              res.status(500).send('WHAT WAS THE REASON?')
+              res.status(500).send('Erro ao adicionar uma nova conta')
              }
-             res.status(200).send('keep a calm e deu certo')
+             res.status(200).send('Conta adicionada com sucesso')
          })
      
      }
@@ -32,7 +32,7 @@ const addConta = async (req, res) => {
 const getAllContas = (req, res) => {
     usuarios.find({ _id: req.params._id },'contas', function(err, conta){
         if(err){
-            res.status(500).send('algo de errado não esta certo')
+            res.status(500).send('Erro ao encontrar as contas desse usuario')
         }
        else { return res.status(200).send(conta)
     }
@@ -60,9 +60,9 @@ const remove = (req, res) => {
         
          usuarios.updateMany({}, { $pull: {'contas': {_id: req.params._id} } }, function(error){
              if(error){
-                 res.status(500).send('Deu errado mas calma')
+                 res.status(500).send('Erro ao remover a conta')
              }
-             res.status(200).send('Pode respirar agora que deu certo')
+             res.status(200).send('Conta removida com sucesso')
          })
          
         })
@@ -75,7 +75,7 @@ const remove = (req, res) => {
 const tipoDeContas = (req, res) => {
     contaModel.find({ tipoDeConta: req.params.tipoDeConta }, function(err, conta){
         if(err){
-            res.status(500).send('deu ruinzao')
+            res.status(500).send('Erro ao encontrar essa pasta')
         }
        else { return res.status(200).send(conta)
     }
@@ -99,14 +99,14 @@ const updateContas = (req, res) => {
      options,
      (erro, conta) => {
          if(erro){
-            res.status(500).send('choremos')
+            res.status(500).send('Erro 500')
          }
          if(conta){
             contaModel.updateMany({_id: contaId},{$set: req.body}, function(erradin){
                 if(erradin){
-                    res.status(500).send('erradin')
+                    res.status(500).send('erro ao atualizar a conta')
                 }
-                res.status(200).send('bababab')
+                res.status(200).send('Conta atualizada com sucesso')
             } )
          }
          
@@ -117,7 +117,7 @@ const updateContas = (req, res) => {
 const nomeConta = (req, res) => {
     contaModel.find({ conta: req.params.conta }, function(err, nameContas){
         if(err){
-            res.status(500).send('chora não bb')
+            res.status(500).send('Erro ao encontrar a conta')
         }
        else { return res.status(200).send(nameContas)
     }

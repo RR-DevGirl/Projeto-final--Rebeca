@@ -55,7 +55,7 @@ const getById = (req, res) => {
    
   usuarios.find({ _id: req.params._id }, function(err, usuario){
         if(err){
-            res.status(500).send('algo de errado não esta certo')
+            res.status(500).send('Erro ao encontrar o usuário correspondente')
         }
        else { return res.status(200).send(usuario)
     }
@@ -68,9 +68,9 @@ const remove = (req, res) => {
     
 usuarios.deleteMany({ _id: req.params._id },function (err) {
       if (err) {
-        return res.status(500).send('Deu errado')
+        return res.status(500).send('Erro ao remover o usuário')
       }
-      res.status(200).send('Deu certo')
+      res.status(200).send('Usuário removido com sucesso')
      
     })
 }
@@ -79,7 +79,7 @@ const updateUsuario = (req, res) => {
     
     usuarios.updateMany({ _id: req.params._id },{ $set: req.body },function (err) {
         if (err) {
-          return res.status(500).send('vixi kk')
+          return res.status(500).send('Erro ao atualizar o usuário')
         }
         res.status(200).send('Atualizado com sucesso')
        
