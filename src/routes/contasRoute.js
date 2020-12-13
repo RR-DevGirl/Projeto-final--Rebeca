@@ -27,7 +27,7 @@ const autenticar = (req, res, next) => {
 
 router.get('/dev', controller.getAllDev)
 router.get('/:tipoDeConta', autenticar, controller.tipoDeContas)
-router.get('/minhaconha/:conta', autenticar, controller.nomeConta)
+router.get('/minhaconta/:conta', autenticar, controller.nomeConta)
 router.post('/:_id', autenticar, controller.addConta)
 router.get('/:_id', autenticar, controller.getAllContas)
 router.delete('/:_id', autenticar, controller.remove)

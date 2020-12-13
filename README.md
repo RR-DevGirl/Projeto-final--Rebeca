@@ -137,3 +137,4 @@ Como essa é a primeira versão dessa API é bem provável que ainda sofra algum
 - Atualizar e melhorar algumas rotas como a de deletar o cadastro do cliente que não está apagando as contas deles do banco de dados
 -  Fazer um Front-end
 - Sofisticar algumas rotas (como as de buscas)
+
