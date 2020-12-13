@@ -118,7 +118,7 @@ npm start
 | Rota | Método | Ação
 |-------------|-----------|-------
 | `/contas/:_id(do usuario)` | Post | Adiciona uma conta para armazenamento no perfil do usuário
-|  `/contas/:conta`| Get | Retorna a conta que o usuário está buscando
+|  `/contas/minhaconta/:conta`| Get | Retorna a conta que o usuário está buscando
 |`/contas/:TipoDeConta`  |Get | Acessar pasta de contas do usuário
 | `/contas/:_id(usuario)` | Get | Acessa apenas as contas do usuário
 |`/contas/_id(da conta)`  | Delete | Apaga a conta determinada pelo _id
