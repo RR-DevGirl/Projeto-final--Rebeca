@@ -42,12 +42,13 @@ Tanto eu como muitas pessoas ao meu redor já tiveram inúmeros problemas por n�
 
 :heavy_check_mark: [JavaScript]()
 
-  
+
+:heavy_check_mark: [Git /](https://git-scm.com/)  [GitHub](https://github.com/)
+
 
 :heavy_check_mark: [Heroku](dashboard.heroku.com/)
 
   
-
 :heavy_check_mark: [Postman](https://chrome.google.com/webstore/detail/postman/fhbjgbiflinjbdggehcddcbncdddomop?hl=pt-BR)
 
   
