@@ -7,7 +7,7 @@ const usuarioSchema = new mongoose.Schema ({
     nomeSocial: { type: String },
     email: { type: String, required: true },
     senha: { type: String, required: true },
-    numero: { type: Number },
+    numero: { type: String },
     dataDeNascimento: { type: String },
     contas: [contas.contasSchema]
 },
